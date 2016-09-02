@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="55v-ZJ-vsL" customClass="CreditCardCell" customModule="CreditCardRow" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CreditCardCell" id="55v-ZJ-vsL" customClass="CreditCardCell" customModule="CreditCardRow" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="112"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55v-ZJ-vsL" id="9sA-Ay-LBu">
@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbJ-bv-5nR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="111"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-Gd-bWy" customClass="PaddedTextField" customModule="CreditCardRow" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Rp-Gd-bWy" customClass="PaddedTextField" customModule="CreditCardRow">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="6Ka-jl-oA9"/>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="1" id="xB5-D7-6UR"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7U-HU-XvX" customClass="PaddedTextField" customModule="CreditCardRow" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y7U-HU-XvX" customClass="PaddedTextField" customModule="CreditCardRow">
                                 <rect key="frame" x="0.0" y="56" width="160" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="zev-BT-EGK"/>
@@ -60,7 +60,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-as-pNm" customClass="PaddedTextField" customModule="CreditCardRow" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QaL-as-pNm" customClass="PaddedTextField" customModule="CreditCardRow">
                                 <rect key="frame" x="160" y="56" width="160" height="56"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -121,8 +121,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="cvcField" destination="QaL-as-pNm" id="19W-ra-wxr"/>
-                <outlet property="expirationField" destination="y7U-HU-XvX" id="AFo-zM-f8P"/>
+                <outlet property="cvvField" destination="QaL-as-pNm" id="WJ5-ur-qpv"/>
+                <outlet property="expirationField" destination="y7U-HU-XvX" id="BA2-Ur-jIm"/>
                 <outlet property="horizontalSeparator" destination="emH-zH-0Na" id="egN-8Q-YeD"/>
                 <outlet property="numberField" destination="6Rp-Gd-bWy" id="Ou7-nM-rJD"/>
                 <outlet property="verticalSeparator" destination="d2K-rs-Q1r" id="blJ-xQ-gDQ"/>

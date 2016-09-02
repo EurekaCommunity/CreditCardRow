@@ -11,13 +11,11 @@
 		28F828811C494B2C00330CF4 /* CreditCardRow.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F828801C494B2C00330CF4 /* CreditCardRow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28F828881C494B2C00330CF4 /* CreditCardRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28F8287D1C494B2C00330CF4 /* CreditCardRow.framework */; };
 		28F8289A1C494B4200330CF4 /* CreditCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F828991C494B4200330CF4 /* CreditCardCell.swift */; };
-		8F7E92261D78AD93002BEFC3 /* CreditCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F7E92251D78AD93002BEFC3 /* CreditCardCell.xib */; };
 		8F7E922B1D78B0D1002BEFC3 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7E92291D78B0D1002BEFC3 /* Eureka.framework */; };
-		8F7E922C1D78B0D1002BEFC3 /* SwiftLuhn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7E922A1D78B0D1002BEFC3 /* SwiftLuhn.framework */; };
 		8F7E922E1D78B335002BEFC3 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E922D1D78B335002BEFC3 /* PaddedTextField.swift */; };
 		8F7E92311D78BA29002BEFC3 /* CreditCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7E92301D78BA29002BEFC3 /* CreditCardRow.swift */; };
-		8FDE77701D78D09500A94698 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FDE776F1D78D09500A94698 /* View.xib */; };
-		8FFF446B1D78D24F00EA3AC8 /* CreditCardRow.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8FFF446A1D78D24F00EA3AC8 /* CreditCardRow.bundle */; };
+		8F9B3A0A1D7DBA12005F8273 /* String+CreditCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B3A091D7DBA12005F8273 /* String+CreditCardRow.swift */; };
+		8FD114E61D79F8B6006976C8 /* CreditCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD114E51D79F8B6006976C8 /* CreditCardCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,14 +36,11 @@
 		28F828871C494B2C00330CF4 /* CreditCardRowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CreditCardRowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F8288E1C494B2C00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Tests/Info.plist; sourceTree = "<group>"; };
 		28F828991C494B4200330CF4 /* CreditCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardCell.swift; sourceTree = "<group>"; };
-		28F8289B1C494BF100330CF4 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Playground.playground; sourceTree = "<group>"; };
-		8F7E92251D78AD93002BEFC3 /* CreditCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardCell.xib; sourceTree = "<group>"; };
-		8F7E92291D78B0D1002BEFC3 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Frameworks/Eureka.framework; sourceTree = "<group>"; };
-		8F7E922A1D78B0D1002BEFC3 /* SwiftLuhn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLuhn.framework; path = Frameworks/SwiftLuhn.framework; sourceTree = "<group>"; };
+		8F7E92291D78B0D1002BEFC3 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 		8F7E922D1D78B335002BEFC3 /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		8F7E92301D78BA29002BEFC3 /* CreditCardRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreditCardRow.swift; sourceTree = "<group>"; };
-		8FDE776F1D78D09500A94698 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
-		8FFF446A1D78D24F00EA3AC8 /* CreditCardRow.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CreditCardRow.bundle; path = CreditCardRow/CreditCardRow.bundle; sourceTree = SOURCE_ROOT; };
+		8F9B3A091D7DBA12005F8273 /* String+CreditCardRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+CreditCardRow.swift"; sourceTree = "<group>"; };
+		8FD114E51D79F8B6006976C8 /* CreditCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreditCardCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +49,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F7E922B1D78B0D1002BEFC3 /* Eureka.framework in Frameworks */,
-				8F7E922C1D78B0D1002BEFC3 /* SwiftLuhn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,7 +66,6 @@
 		28F828731C494B2C00330CF4 = {
 			isa = PBXGroup;
 			children = (
-				28F8289B1C494BF100330CF4 /* Playground.playground */,
 				28F828971C494B4200330CF4 /* Sources */,
 				28F8287F1C494B2C00330CF4 /* CreditCardRow */,
 				28F8288B1C494B2C00330CF4 /* Tests */,
@@ -112,21 +105,19 @@
 		28F828971C494B4200330CF4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				8FFF446A1D78D24F00EA3AC8 /* CreditCardRow.bundle */,
 				8F7E92301D78BA29002BEFC3 /* CreditCardRow.swift */,
 				28F828991C494B4200330CF4 /* CreditCardCell.swift */,
-				8F7E92251D78AD93002BEFC3 /* CreditCardCell.xib */,
+				8FD114E51D79F8B6006976C8 /* CreditCardCell.xib */,
 				8F7E922D1D78B335002BEFC3 /* PaddedTextField.swift */,
-				8FDE776F1D78D09500A94698 /* View.xib */,
+				8F9B3A091D7DBA12005F8273 /* String+CreditCardRow.swift */,
 			);
 			path = Sources;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		8F7E92281D78B0B7002BEFC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8F7E92291D78B0D1002BEFC3 /* Eureka.framework */,
-				8F7E922A1D78B0D1002BEFC3 /* SwiftLuhn.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -222,9 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FFF446B1D78D24F00EA3AC8 /* CreditCardRow.bundle in Resources */,
-				8FDE77701D78D09500A94698 /* View.xib in Resources */,
-				8F7E92261D78AD93002BEFC3 /* CreditCardCell.xib in Resources */,
+				8FD114E61D79F8B6006976C8 /* CreditCardCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +233,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftLuhn.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 			);
 			name = "Copy Frameworks";
@@ -261,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F9B3A0A1D7DBA12005F8273 /* String+CreditCardRow.swift in Sources */,
 				8F7E92311D78BA29002BEFC3 /* CreditCardRow.swift in Sources */,
 				28F8289A1C494B4200330CF4 /* CreditCardCell.swift in Sources */,
 				8F7E922E1D78B335002BEFC3 /* PaddedTextField.swift in Sources */,
@@ -323,7 +312,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -365,7 +354,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -384,10 +373,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CreditCardRow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmartlabs.CreditCardRow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,10 +394,11 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = CreditCardRow/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmartlabs.CreditCardRow;
 				PRODUCT_NAME = "$(TARGET_NAME)";

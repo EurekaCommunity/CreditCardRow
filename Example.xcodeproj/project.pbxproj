@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		287D0A721C4B7877004566D6 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 287D0A711C4B7877004566D6 /* ExampleUITests.swift */; };
-		287D0A7D1C4B7B55004566D6 /* CreditCardRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* CreditCardRow.framework */; };
-		287D0A7E1C4B7B55004566D6 /* CreditCardRow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* CreditCardRow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		28F828D01C4B714D00330CF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F828CF1C4B714D00330CF4 /* AppDelegate.swift */; };
 		28F828D21C4B714D00330CF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F828D11C4B714D00330CF4 /* ViewController.swift */; };
 		28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D31C4B714D00330CF4 /* Main.storyboard */; };
 		28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D61C4B714D00330CF4 /* Assets.xcassets */; };
 		28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */; };
-		8FDE77501D78BE4B00A94698 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE774F1D78BE4B00A94698 /* Eureka.framework */; };
-		8FDE77511D78BE4B00A94698 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE774F1D78BE4B00A94698 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FDE77541D78BEBF00A94698 /* SwiftLuhn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77531D78BEBF00A94698 /* SwiftLuhn.framework */; };
-		8FDE77551D78BEBF00A94698 /* SwiftLuhn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77531D78BEBF00A94698 /* SwiftLuhn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8F9B3A061D7DB064005F8273 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F9B3A051D7DB064005F8273 /* CustomCell.xib */; };
+		8F9B3A081D7DB2C2005F8273 /* MyCreditCardRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9B3A071D7DB2C2005F8273 /* MyCreditCardRow.swift */; };
+		8FD114E01D79F685006976C8 /* CreditCardRow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* CreditCardRow.framework */; };
+		8FD114E11D79F685006976C8 /* CreditCardRow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* CreditCardRow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FDE775F1D78C9B200A94698 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE775E1D78C9B200A94698 /* Eureka.framework */; };
+		8FDE77601D78C9B200A94698 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE775E1D78C9B200A94698 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8FDE77621D78C9B700A94698 /* SwiftLuhn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */; };
+		8FDE77631D78C9B700A94698 /* SwiftLuhn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,19 +38,19 @@
 			remoteGlobalIDString = 28F828871C494B2C00330CF4;
 			remoteInfo = CreditCardRowTests;
 		};
-		287D0A7F1C4B7B55004566D6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 287D0A741C4B7B26004566D6 /* CreditCardRow.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 28F8287C1C494B2C00330CF4;
-			remoteInfo = CreditCardRow;
-		};
 		28F828E11C4B714D00330CF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 28F828C41C4B714D00330CF4 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 28F828CB1C4B714D00330CF4;
 			remoteInfo = Example;
+		};
+		8FD114E21D79F685006976C8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 287D0A741C4B7B26004566D6 /* CreditCardRow.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 28F8287C1C494B2C00330CF4;
+			remoteInfo = CreditCardRow;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -59,9 +61,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8FDE77551D78BEBF00A94698 /* SwiftLuhn.framework in Embed Frameworks */,
-				287D0A7E1C4B7B55004566D6 /* CreditCardRow.framework in Embed Frameworks */,
-				8FDE77511D78BE4B00A94698 /* Eureka.framework in Embed Frameworks */,
+				8FDE77631D78C9B700A94698 /* SwiftLuhn.framework in Embed Frameworks */,
+				8FDE77601D78C9B200A94698 /* Eureka.framework in Embed Frameworks */,
+				8FD114E11D79F685006976C8 /* CreditCardRow.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,9 +82,10 @@
 		28F828DB1C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Example/Info.plist; sourceTree = "<group>"; };
 		28F828E01C4B714D00330CF4 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		28F828E61C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Example/ExampleUITests/Info.plist; sourceTree = "<group>"; };
-		8FDE774F1D78BE4B00A94698 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Frameworks/Eureka.framework; sourceTree = "<group>"; };
-		8FDE77531D78BEBF00A94698 /* SwiftLuhn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLuhn.framework; path = Frameworks/SwiftLuhn.framework; sourceTree = "<group>"; };
-		8FDE77571D78C42F00A94698 /* CreditCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CreditCardCell.xib; path = Sources/CreditCardCell.xib; sourceTree = "<group>"; };
+		8F9B3A051D7DB064005F8273 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCell.xib; path = Example/CustomCell.xib; sourceTree = "<group>"; };
+		8F9B3A071D7DB2C2005F8273 /* MyCreditCardRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCreditCardRow.swift; sourceTree = "<group>"; };
+		8FDE775E1D78C9B200A94698 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Frameworks/Eureka.framework; sourceTree = "<group>"; };
+		8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLuhn.framework; path = Frameworks/SwiftLuhn.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,9 +93,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FDE77541D78BEBF00A94698 /* SwiftLuhn.framework in Frameworks */,
-				287D0A7D1C4B7B55004566D6 /* CreditCardRow.framework in Frameworks */,
-				8FDE77501D78BE4B00A94698 /* Eureka.framework in Frameworks */,
+				8FDE77621D78C9B700A94698 /* SwiftLuhn.framework in Frameworks */,
+				8FDE775F1D78C9B200A94698 /* Eureka.framework in Frameworks */,
+				8FD114E01D79F685006976C8 /* CreditCardRow.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,12 +121,10 @@
 		28F828C31C4B714D00330CF4 = {
 			isa = PBXGroup;
 			children = (
-				8FDE77571D78C42F00A94698 /* CreditCardCell.xib */,
-				8FDE77531D78BEBF00A94698 /* SwiftLuhn.framework */,
+				8FD114B61D79EB6E006976C8 /* Frameworks */,
 				28F828CE1C4B714D00330CF4 /* Example */,
 				28F828E31C4B714D00330CF4 /* ExampleUITests */,
 				28F828CD1C4B714D00330CF4 /* Products */,
-				8FDE774F1D78BE4B00A94698 /* Eureka.framework */,
 				287D0A741C4B7B26004566D6 /* CreditCardRow.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -140,12 +141,10 @@
 		28F828CE1C4B714D00330CF4 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				28F828CF1C4B714D00330CF4 /* AppDelegate.swift */,
 				28F828D11C4B714D00330CF4 /* ViewController.swift */,
-				28F828D31C4B714D00330CF4 /* Main.storyboard */,
-				28F828D61C4B714D00330CF4 /* Assets.xcassets */,
-				28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */,
-				28F828DB1C4B714D00330CF4 /* Info.plist */,
+				8F9B3A051D7DB064005F8273 /* CustomCell.xib */,
+				8F9B3A071D7DB2C2005F8273 /* MyCreditCardRow.swift */,
+				8F9B3A031D7DB02A005F8273 /* Supporting Files */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -157,6 +156,27 @@
 				287D0A711C4B7877004566D6 /* ExampleUITests.swift */,
 			);
 			path = ExampleUITests;
+			sourceTree = "<group>";
+		};
+		8F9B3A031D7DB02A005F8273 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				28F828D31C4B714D00330CF4 /* Main.storyboard */,
+				28F828D61C4B714D00330CF4 /* Assets.xcassets */,
+				28F828D81C4B714D00330CF4 /* LaunchScreen.storyboard */,
+				28F828DB1C4B714D00330CF4 /* Info.plist */,
+				28F828CF1C4B714D00330CF4 /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FD114B61D79EB6E006976C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */,
+				8FDE775E1D78C9B200A94698 /* Eureka.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,7 +195,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				287D0A801C4B7B55004566D6 /* PBXTargetDependency */,
+				8FD114E31D79F685006976C8 /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -267,6 +287,7 @@
 			files = (
 				28F828DA1C4B714D00330CF4 /* LaunchScreen.storyboard in Resources */,
 				28F828D71C4B714D00330CF4 /* Assets.xcassets in Resources */,
+				8F9B3A061D7DB064005F8273 /* CustomCell.xib in Resources */,
 				28F828D51C4B714D00330CF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +308,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftLuhn.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Eureka.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/CreditCardRow.framework",
 			);
 			name = "Copy Frameworks";
@@ -296,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "#/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -307,6 +326,7 @@
 			files = (
 				28F828D21C4B714D00330CF4 /* ViewController.swift in Sources */,
 				28F828D01C4B714D00330CF4 /* AppDelegate.swift in Sources */,
+				8F9B3A081D7DB2C2005F8273 /* MyCreditCardRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,15 +341,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		287D0A801C4B7B55004566D6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = CreditCardRow;
-			targetProxy = 287D0A7F1C4B7B55004566D6 /* PBXContainerItemProxy */;
-		};
 		28F828E21C4B714D00330CF4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 28F828CB1C4B714D00330CF4 /* Example */;
 			targetProxy = 28F828E11C4B714D00330CF4 /* PBXContainerItemProxy */;
+		};
+		8FD114E31D79F685006976C8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CreditCardRow;
+			targetProxy = 8FD114E21D79F685006976C8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -446,6 +466,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmartlabs.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -462,6 +483,7 @@
 					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xmartlabs.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
