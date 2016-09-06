@@ -19,8 +19,6 @@
 		8FD114E11D79F685006976C8 /* CreditCardRow.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 287D0A7A1C4B7B26004566D6 /* CreditCardRow.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FDE775F1D78C9B200A94698 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE775E1D78C9B200A94698 /* Eureka.framework */; };
 		8FDE77601D78C9B200A94698 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE775E1D78C9B200A94698 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8FDE77621D78C9B700A94698 /* SwiftLuhn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */; };
-		8FDE77631D78C9B700A94698 /* SwiftLuhn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +59,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8FDE77631D78C9B700A94698 /* SwiftLuhn.framework in Embed Frameworks */,
 				8FDE77601D78C9B200A94698 /* Eureka.framework in Embed Frameworks */,
 				8FD114E11D79F685006976C8 /* CreditCardRow.framework in Embed Frameworks */,
 			);
@@ -84,8 +81,7 @@
 		28F828E61C4B714D00330CF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = Example/ExampleUITests/Info.plist; sourceTree = "<group>"; };
 		8F9B3A051D7DB064005F8273 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomCell.xib; path = Example/CustomCell.xib; sourceTree = "<group>"; };
 		8F9B3A071D7DB2C2005F8273 /* MyCreditCardRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCreditCardRow.swift; sourceTree = "<group>"; };
-		8FDE775E1D78C9B200A94698 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Frameworks/Eureka.framework; sourceTree = "<group>"; };
-		8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftLuhn.framework; path = Frameworks/SwiftLuhn.framework; sourceTree = "<group>"; };
+		8FDE775E1D78C9B200A94698 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +89,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8FDE77621D78C9B700A94698 /* SwiftLuhn.framework in Frameworks */,
 				8FDE775F1D78C9B200A94698 /* Eureka.framework in Frameworks */,
 				8FD114E01D79F685006976C8 /* CreditCardRow.framework in Frameworks */,
 			);
@@ -173,7 +168,6 @@
 		8FD114B61D79EB6E006976C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8FDE77611D78C9B700A94698 /* SwiftLuhn.framework */,
 				8FDE775E1D78C9B200A94698 /* Eureka.framework */,
 			);
 			name = Frameworks;
@@ -464,6 +458,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -481,6 +476,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Example/Example/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
