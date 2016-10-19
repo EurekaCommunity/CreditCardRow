@@ -9,7 +9,7 @@
 import UIKit
 
 /// UITextField subclass that inserts a padding around the text rect.
-public class PaddedTextField : UITextField {
+open class PaddedTextField : UITextField {
 
     /// Padding value to apply around text rect. Used to apply the same padding vertically and horizontally. Getter returns horizontalPadding.
     public var padding: CGFloat {
@@ -26,20 +26,20 @@ public class PaddedTextField : UITextField {
     /// Vertical padding for text field
     public var verticalPadding : CGFloat = 18.0
     
-    override public func textRectForBounds(bounds: CGRect) -> CGRect {
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return myRectForBounds(bounds)
     }
 
-    override public func placeholderRectForBounds(bounds: CGRect) -> CGRect {
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return myRectForBounds(bounds)
     }
 
-    override public func editingRectForBounds(bounds: CGRect) -> CGRect {
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return myRectForBounds(bounds)
     }
 
-    func myRectForBounds(bounds: CGRect) -> CGRect {
-        return CGRectMake(bounds.origin.x + horizontalPadding, bounds.origin.y + verticalPadding,
-                          bounds.width - horizontalPadding * 2, bounds.height - verticalPadding * 2)
+    func myRectForBounds(_ bounds: CGRect) -> CGRect {
+        return CGRect(x: bounds.origin.x + horizontalPadding, y: bounds.origin.y + verticalPadding,
+                          width: bounds.width - horizontalPadding * 2, height: bounds.height - verticalPadding * 2)
     }
 }

@@ -34,8 +34,8 @@ class ViewController: FormViewController {
                 .cellSetup({ (cell, row) in
                     cell.height = { 50 }
                     cell.numberField.padding = 8
-                    cell.numberField.textAlignment = .Center
-                    cell.numberField.textColor = .blueColor()
+                    cell.numberField.textAlignment = .center
+                    cell.numberField.textColor = .blue
                     cell.backgroundColor = UIColor(red: 0.83, green: 0.96, blue: 0.83, alpha: 1)
                 })
 
