@@ -21,7 +21,7 @@ public func ==(lhs: CreditCardInfo, rhs: CreditCardInfo) -> Bool {
     return (lhs.creditCardNumber == rhs.creditCardNumber && lhs.expiration == rhs.expiration && lhs.cvv == rhs.cvv)
 }
 
-public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
+open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
 
     /// Horizontal separator between number field and expiration and CVV fields in original cell
     @IBOutlet public weak var horizontalSeparator: UIView?
@@ -39,43 +39,47 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
     @IBOutlet public weak var cvvField: PaddedTextField?
 
     // Variables used to save temporary information about number text field
-    private var previousTextFieldContent: String?
-    private var previousSelection: UITextRange?
+    fileprivate var previousTextFieldContent: String?
+    fileprivate var previousSelection: UITextRange?
 
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
-    public override func setup() {
+    open override func setup() {
         super.setup()
         height = { 56 * 2 }
-        selectionStyle = .None
+        selectionStyle = .none
         numberField.padding = 16.0
         expirationField?.padding = 16.0
         cvvField?.padding = 18.0
 
-        horizontalSeparator?.backgroundColor = .grayColor()
-        verticalSeparator?.backgroundColor = .grayColor()
+        horizontalSeparator?.backgroundColor = .gray
+        verticalSeparator?.backgroundColor = .gray
 
         for field in [numberField, expirationField, cvvField] {
-            field?.autocorrectionType = .No
-            field?.autocapitalizationType = .None
-            field?.keyboardType = .NumberPad
-            field?.font = .systemFontOfSize(24)
+            field?.autocorrectionType = .no
+            field?.autocapitalizationType = .none
+            field?.keyboardType = .numberPad
+            field?.font = .systemFont(ofSize: 24)
             field?.minimumFontSize = 14.0
-            field?.addTarget(self, action: #selector(CreditCardCell.textFieldEditingChanged(_:)), forControlEvents: .EditingChanged)
+            field?.addTarget(self, action: #selector(CreditCardCell.textFieldEditingChanged(_:)), for: .editingChanged)
             field?.delegate = self
         }
 
-        cvvField?.secureTextEntry = true
+        cvvField?.isSecureTextEntry = true
     }
 
-    public override func update() {
+    open override func update() {
         super.update()
         textLabel?.text = nil
 
         contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.grayColor().CGColor
+        contentView.layer.borderColor = UIColor.gray.cgColor
 
         numberField.text = row.value?.creditCardNumber
         reformatAsCardNumber(numberField)
@@ -99,10 +103,10 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
 
      - parameter textField: The textfield from which to obtain a value
      */
-    func updateValuesForTextField(textField: UITextField) {
+    func updateValuesForTextField(_ textField: UITextField) {
         switch(textField){
         case numberField:
-            row.value?.creditCardNumber = textField.text?.stringByReplacingOccurrencesOfString(ccrow.numberSeparator, withString: "", options: .LiteralSearch, range: nil)
+            row.value?.creditCardNumber = textField.text?.replacingOccurrences(of: ccrow.numberSeparator, with: "", options: .literal, range: nil)
         case expirationField!:
             row.value?.expiration = textField.text
         case cvvField!:
@@ -112,19 +116,19 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
     }
 
     /// Strong-typed row
-    private var ccrow: _CreditCardRow {
+    fileprivate var ccrow: _CreditCardRow {
         return row as! _CreditCardRow
     }
 
-    override public func cellCanBecomeFirstResponder() -> Bool {
+    override open func cellCanBecomeFirstResponder() -> Bool {
         return !row.isDisabled
     }
 
-    public override func cellBecomeFirstResponder(direction: Direction) -> Bool {
+    open override func cellBecomeFirstResponder(withDirection direction: Direction) -> Bool {
         switch direction {
-        case .Up:
+        case .up:
             return cvvField?.becomeFirstResponder() ?? expirationField?.becomeFirstResponder() ?? numberField.becomeFirstResponder()
-        case .Down:
+        case .down:
             return numberField.becomeFirstResponder()
         }
     }
@@ -132,26 +136,26 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
     //MARK: Navigation
 
 
-    override public var inputAccessoryView: UIView? {
+    override open var inputAccessoryView: UIView? {
         // get the default accessory view and override some methods for internal navigation
-        if let v = formViewController()?.inputAccessoryViewForRow(row) as? NavigationAccessoryView{
-            if numberField.isFirstResponder() {
-                v.nextButton.enabled = true
+        if let v = formViewController()?.inputAccessoryView(for: row) as? NavigationAccessoryView{
+            if numberField.isFirstResponder {
+                v.nextButton.isEnabled = true
                 v.nextButton.target = self
                 v.nextButton.action = #selector(CreditCardCell.internalNavigationAction(_:))
                 return v
             }
-            else if expirationField?.isFirstResponder() == true {
+            else if expirationField?.isFirstResponder == true {
                 v.previousButton.target = self
                 v.previousButton.action = #selector(CreditCardCell.internalNavigationAction(_:))
                 v.nextButton.target = self
                 v.nextButton.action = #selector(CreditCardCell.internalNavigationAction(_:))
-                v.previousButton.enabled = true
-                v.nextButton.enabled = true
+                v.previousButton.isEnabled = true
+                v.nextButton.isEnabled = true
                 return v
             }
-            else if cvvField?.isFirstResponder() == true {
-                v.previousButton.enabled = true
+            else if cvvField?.isFirstResponder == true {
+                v.previousButton.isEnabled = true
                 v.previousButton.target = self
                 v.previousButton.action = #selector(CreditCardCell.internalNavigationAction(_:))
                 return v
@@ -162,22 +166,22 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
     }
 
     /// Internal function that handles the tap of the row navigation buttons
-    func internalNavigationAction(sender: UIBarButtonItem) {
+    func internalNavigationAction(_ sender: UIBarButtonItem) {
         guard let inputAccessoryView  = inputAccessoryView as? NavigationAccessoryView else { return }
 
-        if numberField.isFirstResponder() {
+        if numberField.isFirstResponder {
             expirationField?.becomeFirstResponder()
         }
-        else if expirationField?.isFirstResponder() == true {
+        else if expirationField?.isFirstResponder == true {
             sender == inputAccessoryView.previousButton ? numberField.becomeFirstResponder() : cvvField?.becomeFirstResponder()
         }
-        else if cvvField?.isFirstResponder() == true {
+        else if cvvField?.isFirstResponder == true {
             expirationField?.becomeFirstResponder()
         }
     }
 
     //MARK: UITextFieldDelegate
-    public func textFieldEditingChanged(textField: UITextField) {
+    open func textFieldEditingChanged(_ textField: UITextField) {
         updateValuesForTextField(textField)
         switch textField {
         case numberField:
@@ -190,11 +194,11 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
         }
     }
 
-    @objc public func textFieldDidEndEditing(textField: UITextField) {
+    @objc open func textFieldDidEndEditing(_ textField: UITextField) {
         updateValuesForTextField(textField)
     }
 
-    public func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         // Save textField's current state before performing the change, in case
         // reformatAsCardNumber wants to revert it
         switch textField {
@@ -209,13 +213,13 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
 
     //MARK: Card number formatting
 
-    public func reformatAsCardNumber(textField: UITextField) {
+    open func reformatAsCardNumber(_ textField: UITextField) {
         // In order to make the cursor end up positioned correctly, we need to
         // explicitly reposition it after we inject spaces into the text.
         // targetCursorPosition keeps track of where the cursor needs to end up as
         // we modify the string, and at the end we set the cursor position to it.
-        guard let selectedRange = textField.selectedTextRange, textString = textField.text else { return }
-        var targetCursorPosition = textField.offsetFromPosition(textField.beginningOfDocument, toPosition: selectedRange.start)
+        guard let selectedRange = textField.selectedTextRange, let textString = textField.text else { return }
+        var targetCursorPosition = textField.offset(from: textField.beginningOfDocument, to: selectedRange.start)
 
         let cardNumberWithoutSpaces = removeNonDigits(textString, cursorPosition: &targetCursorPosition)
 
@@ -231,8 +235,8 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
 
         // update text and cursor appropiately
         textField.text = cardNumberWithSpaces
-        if let targetPosition = textField.positionFromPosition(textField.beginningOfDocument, offset: targetCursorPosition) {
-            textField.selectedTextRange = textField.textRangeFromPosition(targetPosition, toPosition: targetPosition)
+        if let targetPosition = textField.position(from: textField.beginningOfDocument, offset: targetCursorPosition) {
+            textField.selectedTextRange = textField.textRange(from: targetPosition, to: targetPosition)
         }
     }
 
@@ -243,11 +247,11 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
      `7` (keeping it between the '2' and the '3' after the spaces are removed).
      */
 
-    public func removeNonDigits(string: String, inout cursorPosition: Int) -> String {
+    open func removeNonDigits(_ string: String, cursorPosition: inout Int) -> String {
         let originalCursorPosition = cursorPosition
         var digitsOnlyString = ""
         for i in 0..<string.characters.count {
-            let characterToAdd = string[string.startIndex.advancedBy(i)]
+            let characterToAdd = string[string.characters.index(string.startIndex, offsetBy: i)]
             if "0"..."9" ~= characterToAdd {
                 digitsOnlyString.append(characterToAdd)
             }
@@ -269,7 +273,7 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
      will be changed to `8` (keeping it between the '2' and the '3' after the
      spaces are added).
      */
-    public func insertSpacesEveryFourDigits(string: String, inout cursorPosition: Int) -> String {
+    open func insertSpacesEveryFourDigits(_ string: String, cursorPosition: inout Int) -> String {
         var stringWithAddedSpaces = ""
         let cursorPositionInSpacelessString = cursorPosition
         for i in 0..<string.characters.count {
@@ -279,24 +283,24 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
                     cursorPosition += ccrow.numberSeparator.characters.count
                 }
             }
-            stringWithAddedSpaces.append(string[string.startIndex.advancedBy(i)])
+            stringWithAddedSpaces.append(string[string.characters.index(string.startIndex, offsetBy: i)])
         }
         
         return stringWithAddedSpaces
     }
 
     //MARK: Expiration date formatting
-    public func reformatAsExpiration(textField: UITextField) {
+    open func reformatAsExpiration(_ textField: UITextField) {
         guard let string = textField.text else { return }
         let expirationString = String(ccrow.expirationSeparator)
-        let cleanString = string.stringByReplacingOccurrencesOfString(expirationString, withString: "", options: .LiteralSearch, range: nil)
+        let cleanString = string.replacingOccurrences(of: expirationString, with: "", options: .literal, range: nil)
         if cleanString.length >= 3 {
-            let monthString = cleanString[0...1]
+            let monthString = cleanString[Range(uncheckedBounds: (lower: 0, upper: 2))]
             var yearString: String
             if cleanString.length == 3 {
                 yearString = cleanString[2]
             } else {
-                yearString = cleanString[2...3]
+                yearString = cleanString[Range(uncheckedBounds: (lower: 2, upper: 4))]
             }
             textField.text = monthString + expirationString + yearString
         } else {
@@ -305,7 +309,7 @@ public class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType
     }
 
     //MARK: CVV formatting
-    public func reformatAsCVV(textField: UITextField) {
+    open func reformatAsCVV(_ textField: UITextField) {
         guard let string = textField.text else { return }
         if string.characters.count > ccrow.maxCVVLength {
             textField.text = string[0..<ccrow.maxCVVLength]

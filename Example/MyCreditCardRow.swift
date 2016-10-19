@@ -13,6 +13,6 @@ import Eureka
 final class MyCreditCardRow: _CreditCardRow, RowType {
     required init(tag: String?) {
         super.init(tag: tag)
-        cellProvider = CellProvider<CreditCardCell>(nibName: "CustomCell", bundle: nil)
+        cellProvider = CellProvider<CreditCardCell>(nibName: "CustomCell", bundle: Bundle.main)
     }
 }

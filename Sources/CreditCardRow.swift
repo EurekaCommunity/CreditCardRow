@@ -9,7 +9,7 @@
 import Eureka
 
 /// Credit card row for Eureka. If you want to change the nib file for this cell then you should subclass _CreditCardRow
-public class _CreditCardRow : Row<CreditCardInfo, CreditCardCell> {
+open class _CreditCardRow : Row<CreditCardCell> {
 
     /// Separator for the credit card number. Defaults to a whitespace. Emojis currently not supported.
     public var numberSeparator: String = " "
@@ -37,15 +37,11 @@ public final class CreditCardRow : _CreditCardRow, RowType {
         super.init(tag: tag)
 
         // load correct bundle for cell nib file
-        var bundle: NSBundle
-        if let bundleWithIdentifier = NSBundle(identifier: "com.xmartlabs.CreditCardRow") {
-            // Example or Carthage
-            bundle = bundleWithIdentifier
-        } else {
+        var bundle = Bundle(for: CreditCardRow.self)
+        let bundleURL = bundle.url(forResource: "CreditCardRow", withExtension: "bundle")
+        if let bundleURL = bundleURL  {
             // Cocoapods
-            let podBundle = NSBundle(forClass: CreditCardRow.self)
-            let bundleURL = podBundle.URLForResource("Frameworks/CreditCardRow.framework/CreditCardRow", withExtension: "bundle")
-            bundle = NSBundle(URL: bundleURL!)!
+            bundle = Bundle(url: bundleURL)!
         }
         cellProvider = CellProvider<CreditCardCell>(nibName: "CreditCardCell", bundle: bundle)
     }
