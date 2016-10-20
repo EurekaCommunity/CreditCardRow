@@ -295,12 +295,12 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
         let expirationString = String(ccrow.expirationSeparator)
         let cleanString = string.replacingOccurrences(of: expirationString, with: "", options: .literal, range: nil)
         if cleanString.length >= 3 {
-            let monthString = cleanString[Range(uncheckedBounds: (lower: 0, upper: 2))]
+            let monthString = cleanString[Range(0...1)]
             var yearString: String
             if cleanString.length == 3 {
                 yearString = cleanString[2]
             } else {
-                yearString = cleanString[Range(uncheckedBounds: (lower: 2, upper: 4))]
+                yearString = cleanString[Range(2...3)]
             }
             textField.text = monthString + expirationString + yearString
         } else {
