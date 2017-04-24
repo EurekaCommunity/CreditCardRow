@@ -12,9 +12,11 @@ import Eureka
  *  Struct holding the value for a CreditCardRow
  */
 public struct CreditCardInfo : Equatable {
-    var creditCardNumber : String?
-    var expiration : String?
-    var cvv : String?
+    public var creditCardNumber : String?
+    public var expiration : String?
+    public var cvv : String?
+    
+    public init() { }
 }
 
 public func ==(lhs: CreditCardInfo, rhs: CreditCardInfo) -> Bool {
