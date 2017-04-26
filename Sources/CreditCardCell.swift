@@ -175,7 +175,7 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
             expirationField?.becomeFirstResponder()
         }
         else if expirationField?.isFirstResponder == true {
-            sender == inputAccessoryView.previousButton ? numberField.becomeFirstResponder() : cvvField?.becomeFirstResponder()
+            _ = (sender == inputAccessoryView.previousButton ? numberField.becomeFirstResponder() : cvvField?.becomeFirstResponder())
         }
         else if cvvField?.isFirstResponder == true {
             expirationField?.becomeFirstResponder()
