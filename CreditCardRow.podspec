@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "CreditCardRow"
-  s.version          = "2.1.0"
+  s.version          = "3.0.0"
   s.summary          = "An Eureka row that allows the user to input a credit card number with optional CVC and expiration date."
   s.homepage         = "https://github.com/EurekaCommunity/CreditCardRow"
   s.license          = { type: 'MIT', file: 'LICENSE' }
@@ -14,5 +14,5 @@ Pod::Spec.new do |s|
     'CreditCardRow' => ['Sources/CreditCardCell.xib']
   }
   s.ios.frameworks = 'UIKit', 'Foundation'
-  s.dependency 'Eureka', '3.0'
+  s.dependency 'Eureka', '4.0'
 end

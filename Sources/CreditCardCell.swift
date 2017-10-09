@@ -168,7 +168,7 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
     }
 
     /// Internal function that handles the tap of the row navigation buttons
-    func internalNavigationAction(_ sender: UIBarButtonItem) {
+    @objc func internalNavigationAction(_ sender: UIBarButtonItem) {
         guard let inputAccessoryView  = inputAccessoryView as? NavigationAccessoryView else { return }
 
         if numberField.isFirstResponder {
@@ -183,7 +183,7 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
     }
 
     //MARK: UITextFieldDelegate
-    open func textFieldEditingChanged(_ textField: UITextField) {
+    @objc open func textFieldEditingChanged(_ textField: UITextField) {
         updateValuesForTextField(textField)
         switch textField {
         case numberField:
