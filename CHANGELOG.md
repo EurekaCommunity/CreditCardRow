@@ -1,6 +1,11 @@
 # Change Log
 All notable changes to CreditCardRow will be documented in this file.
 
+### [3.0.0](https://github.com/EurekaCommunity/GenericPasswordRow/releases/tag/3.0.0)
+<!-- Released on 2017-10-09. -->
+
+* Adds support for Xcode 9 (Swift 4)
+
 ### [2.1.0](https://github.com/EurekaCommunity/GenericPasswordRow/releases/tag/2.1.0)
 <!-- Released on 2017-04-25. -->
 
