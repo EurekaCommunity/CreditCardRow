@@ -5,7 +5,7 @@
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg?style=flat" alt="Platform iOS" />
 <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat" alt="Swift 2 compatible" /></a>
 <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>
-<a href="https://cocoapods.org/pods/XLActionController"><img src="https://img.shields.io/cocoapods/v/CreditCardRow.svg" alt="CocoaPods compatible" /></a>
+<a href="https://cocoapods.org/pods/CreditCardRow"><img src="https://img.shields.io/cocoapods/v/CreditCardRow.svg" alt="CocoaPods compatible" /></a>
 <a href="https://raw.githubusercontent.com/xmartlabs/CreditCardRow/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License: MIT" /></a>
 </p>
 
@@ -30,7 +30,7 @@ By [Xmartlabs SRL](http://xmartlabs.com).
 
 <img src="Media/CreditCardRow.gif" width="300"/> 
 
-The master branch is in Swift 3. Use release 1.0.0 for Swift 2.
+The master branch is in Swift 4. Use release 1.0.0 for Swift 2 or release 2.* for Swift 3.
 
 ## Usage
 
@@ -53,7 +53,7 @@ class ViewController: FormViewController {
 ## Requirements
 
 * iOS 8.0+
-* Xcode 8.3+
+* Xcode 9.0+
 
 ## Getting involved
 
@@ -82,7 +82,7 @@ Follow these steps to run Example project:
 To install CreditCardRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CreditCardRow', '~> 2.0'
+pod 'CreditCardRow', '~> 3.0'
 ```
 
 #### Carthage
@@ -92,7 +92,7 @@ pod 'CreditCardRow', '~> 2.0'
 To install CreditCardRow, simply add the following line to your Cartfile:
 
 ```ogdl
-github "EurekaCommunity/CreditCardRow" ~> 2.0
+github "EurekaCommunity/CreditCardRow" ~> 3.0
 ```
 
 
