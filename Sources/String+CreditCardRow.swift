@@ -24,9 +24,6 @@ public extension String {
         return String(self[Range(start ..< end)])
     }
 
-    var length: Int {
-        return count
-    }
 }
 
 //"abcde"[0] == "a"

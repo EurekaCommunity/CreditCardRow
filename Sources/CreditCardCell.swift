@@ -296,10 +296,10 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
         guard let string = textField.text else { return }
         let expirationString = String(ccrow.expirationSeparator)
         let cleanString = string.replacingOccurrences(of: expirationString, with: "", options: .literal, range: nil)
-        if cleanString.length >= 3 {
+        if cleanString.count >= 3 {
             let monthString = cleanString[Range(0...1)]
             var yearString: String
-            if cleanString.length == 3 {
+            if cleanString.count == 3 {
                 yearString = cleanString[2]
             } else {
                 yearString = cleanString[Range(2...3)]
