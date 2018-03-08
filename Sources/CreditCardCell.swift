@@ -225,7 +225,7 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
 
         let cardNumberWithoutSpaces = removeNonDigits(textString, cursorPosition: &targetCursorPosition)
 
-        if cardNumberWithoutSpaces.characters.count > ccrow.maxCreditCardNumberLength {
+        if cardNumberWithoutSpaces.count > ccrow.maxCreditCardNumberLength {
             // If the user is trying to enter more than maxCreditCardNumberLength digits, we prevent
             // their change, leaving the text field in its previous state.
             textField.text = previousTextFieldContent
@@ -252,8 +252,8 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
     open func removeNonDigits(_ string: String, cursorPosition: inout Int) -> String {
         let originalCursorPosition = cursorPosition
         var digitsOnlyString = ""
-        for i in 0..<string.characters.count {
-            let characterToAdd = string[string.characters.index(string.startIndex, offsetBy: i)]
+        for i in 0..<string.count {
+            let characterToAdd = string[string.index(string.startIndex, offsetBy: i)]
             if "0"..."9" ~= characterToAdd {
                 digitsOnlyString.append(characterToAdd)
             }
@@ -278,14 +278,14 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
     open func insertSpacesEveryFourDigits(_ string: String, cursorPosition: inout Int) -> String {
         var stringWithAddedSpaces = ""
         let cursorPositionInSpacelessString = cursorPosition
-        for i in 0..<string.characters.count {
+        for i in 0..<string.count {
             if ((i>0) && ((i % 4) == 0)) {
                 stringWithAddedSpaces += ccrow.numberSeparator
                 if (i < cursorPositionInSpacelessString) {
-                    cursorPosition += ccrow.numberSeparator.characters.count
+                    cursorPosition += ccrow.numberSeparator.count
                 }
             }
-            stringWithAddedSpaces.append(string[string.characters.index(string.startIndex, offsetBy: i)])
+            stringWithAddedSpaces.append(string[string.index(string.startIndex, offsetBy: i)])
         }
         
         return stringWithAddedSpaces
@@ -313,7 +313,7 @@ open class CreditCardCell: Cell<CreditCardInfo>, UITextFieldDelegate, CellType {
     //MARK: CVV formatting
     open func reformatAsCVV(_ textField: UITextField) {
         guard let string = textField.text else { return }
-        if string.characters.count > ccrow.maxCVVLength {
+        if string.count > ccrow.maxCVVLength {
             textField.text = string[0..<ccrow.maxCVVLength]
         }
     }

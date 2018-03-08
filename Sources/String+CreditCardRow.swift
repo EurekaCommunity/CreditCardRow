@@ -11,7 +11,7 @@ import Foundation
 public extension String {
 
     subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
 
     subscript (i: Int) -> String {
@@ -19,13 +19,13 @@ public extension String {
     }
 
     subscript (r: Range<Int>) -> String {
-        let start = characters.index(startIndex, offsetBy: r.lowerBound)
-        let end = characters.index(start, offsetBy: r.upperBound - r.lowerBound)
+        let start = index(startIndex, offsetBy: r.lowerBound)
+        let end = index(start, offsetBy: r.upperBound - r.lowerBound)
         return String(self[Range(start ..< end)])
     }
 
     var length: Int {
-        return characters.count
+        return count
     }
 }
 
