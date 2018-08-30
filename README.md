@@ -35,6 +35,7 @@ The master branch is in Swift 4. Use release 1.0.0 for Swift 2 or release 2.* fo
 ## Usage
 
 ```swift
+import Eureka
 import CreditCardRow
 
 class ViewController: FormViewController {
