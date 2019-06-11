@@ -30,8 +30,6 @@ By [Xmartlabs SRL](http://xmartlabs.com).
 
 <img src="Media/CreditCardRow.gif" width="300"/> 
 
-The master branch is in Swift 4. Use release 1.0.0 for Swift 2 or release 2.* for Swift 3.
-
 ## Usage
 
 ```swift
@@ -53,8 +51,8 @@ class ViewController: FormViewController {
 
 ## Requirements
 
-* iOS 8.0+
-* Xcode 9.0+
+* iOS 9.3+
+* Xcode 10.2+
 
 ## Getting involved
 
@@ -83,7 +81,7 @@ Follow these steps to run Example project:
 To install CreditCardRow, simply add the following line to your Podfile:
 
 ```ruby
-pod 'CreditCardRow', '~> 3.0'
+pod 'CreditCardRow', '~> 3.2'
 ```
 
 #### Carthage
