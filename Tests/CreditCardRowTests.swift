@@ -25,7 +25,7 @@ class CreditCardRowTests: XCTestCase {
         XCTAssertEqual(testString[0], "a")
         XCTAssertEqual(testString[3], "d")
         XCTAssertEqual(testString[Range(0...1)], "ab")
-        XCTAssertEqual(testString[Range(3..<6)], "def")
+        XCTAssertEqual(testString[3..<6], "def")
     }
     
 }
